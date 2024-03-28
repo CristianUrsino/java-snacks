@@ -11,9 +11,19 @@ public class Snack3 {
         Scanner scanner = new Scanner(System.in);
         //dichiaro alcune variabili
         int total = 0;
-        //dichiaro e inizializzo in input la grandezza dell'array
-        System.out.print("Please enter as how many numbers as you want: ");
-        int sizeArrayNumbers = Integer.parseInt(scanner.nextLine());
+        int sizeArrayNumbers;
+        //inizializzo in input la grandezza dell'array
+        do {
+            try{
+                System.out.print("Please enter as how many numbers as you want: ");
+                sizeArrayNumbers = Integer.parseInt(scanner.nextLine());
+            }catch(Exception e){
+                sizeArrayNumbers = 1;
+            }
+            if(sizeArrayNumbers < 2){
+                System.out.println("Error, is not integer number greater than 2, please try again");
+            }
+        }while(sizeArrayNumbers < 2);
         //dichiaro l'array dei numeri
         int[] numbers = new int[sizeArrayNumbers];
         //riempio l'array con numeri casuali
@@ -34,7 +44,7 @@ public class Snack3 {
             total += numbers[i];
         }
         //output finale
-        System.out.println("\nthe sum of numer in odd pesitions: " + total);
+        System.out.println("\nthe sum of numer in odd positions: " + total);
         //chiudo lo scanner
         scanner.close();
     }
