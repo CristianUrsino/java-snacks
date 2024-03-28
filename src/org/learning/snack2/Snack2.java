@@ -28,8 +28,21 @@ public class Snack2 {
                 "Marroni"
         };
         //dichiaro e inizializzo la grandezza del nuovo array
-        System.out.print("Please enter as many names as you want: ");
-        int sizeFakeNames = Integer.parseInt(scanner.nextLine());
+        int sizeFakeNames;
+        do {
+            //ciclo finchè sizeFakeNames è un numero intero positovo
+            try{
+                System.out.print("Please enter as many names as you want: ");
+                sizeFakeNames = Integer.parseInt(scanner.nextLine());
+            }catch (Exception e){
+                //porta a 0 per ripetere il ciclo
+                sizeFakeNames = 0;
+            }
+            if(sizeFakeNames <1){
+                //se negativo o uguale a 0 mando output errore
+                System.out.println("Error, is not a positive integer number, please try again");
+            }
+        }while(sizeFakeNames < 1);
         //dichiaro il nuovo array
         String[] fakeNames = new String[sizeFakeNames];
         //riempio il nuovo array con i nomi e cognomi random
@@ -49,5 +62,7 @@ public class Snack2 {
             }
             System.out.print(fakeNames[i] + " - ");
         }
+        //chiudo lo scanner
+        scanner.close();
     }
 }

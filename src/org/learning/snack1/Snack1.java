@@ -25,7 +25,7 @@ public class Snack1 {
             }
             if (inputNumber < MIN_NUMBER || inputNumber > MAX_NUMBER || inputNumber % 2 == 1){
                 //se non è pari e compreso stampo output dell'errore
-                System.out.println("number is not even number between " + MIN_NUMBER + " and " + MAX_NUMBER + ". Please try again ");
+                System.out.println("number is not integer even number between " + MIN_NUMBER + " and " + MAX_NUMBER + ". Please try again ");
             }
         }while(inputNumber < MIN_NUMBER || inputNumber > MAX_NUMBER || inputNumber % 2 == 1);
         //output finale
