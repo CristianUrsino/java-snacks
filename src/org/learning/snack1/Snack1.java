@@ -16,14 +16,21 @@ public class Snack1 {
         int inputNumber;
         do{
             //ciclo finchè il numero inserito non è pari e compreso tra MAX e MIN NUMBER
-            System.out.print("Please insert a even number between " + MIN_NUMBER + " and " + MAX_NUMBER + ": ");
-            inputNumber = scanner.nextInt();
+            try{
+                System.out.print("Please insert a even number between " + MIN_NUMBER + " and " + MAX_NUMBER + ": ");
+                inputNumber = Integer.parseInt(scanner.nextLine());
+            }catch (Exception e){
+                //se l'input non è un numero, faccio si che dia l'errore e che continui il ciclo
+                inputNumber = 1;
+            }
             if (inputNumber < MIN_NUMBER || inputNumber > MAX_NUMBER || inputNumber % 2 == 1){
                 //se non è pari e compreso stampo output dell'errore
-                System.out.println("number is not even and between " + MIN_NUMBER + " and " + MAX_NUMBER + ". Please try again ");
+                System.out.println("number is not even number between " + MIN_NUMBER + " and " + MAX_NUMBER + ". Please try again ");
             }
         }while(inputNumber < MIN_NUMBER || inputNumber > MAX_NUMBER || inputNumber % 2 == 1);
         //output finale
         System.out.println("thank you");
+        //chiudo lo scanner
+        scanner.close();
     }
 }
