@@ -14,7 +14,7 @@ public class Snack4 {
             System.out.print("Please enter the string: ");
             inputString = scanner.nextLine();
             if(inputString.length() < 2){
-                //se ci sono meno di 2 lettere
+                //se ci sono meno di 2 lettere mando output errore
                 System.out.println("Errore, the string has less than 2 characters, please try again");
             }
         }while(inputString.length() < 2);

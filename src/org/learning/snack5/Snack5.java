@@ -10,8 +10,16 @@ public class Snack5 {
         //dichiaro e inizializzo le variabili
         int characters = 0, numbers = 0, symbols = 0;
         //dichiaro e inizializzo la stringa
-        System.out.print("please enter the string: ");
-        String inputString = scanner.nextLine();
+        String inputString;
+        do {
+            //ciclo finchè non viene inserita più di una lettera
+            System.out.print("please enter the string: ");
+            inputString = scanner.nextLine();
+            if(inputString.isEmpty()){
+                //se vuota mando output errore
+                System.out.println("Errore, the string is empty, please try again");
+            }
+        }while(inputString.isEmpty());
         //ciclo i caratteri della stringa e incremento le variabili
         for (int i = 0; i < inputString.length(); i++) {
             if(Character.isAlphabetic(inputString.charAt(i))){
