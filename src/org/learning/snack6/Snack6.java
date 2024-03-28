@@ -9,10 +9,22 @@ public class Snack6 {
         double hours = 0, minutes = 0, seconds = 0;
         int totalSeconds;
         //inizializzo totalSeconds
-        System.out.print("Please enter the seconds: ");
-        totalSeconds = Integer.parseInt(scanner.nextLine());
+        do {
+            //ciclo finchè non è un numero intero positovo
+            try{
+                System.out.print("Please enter the seconds: ");
+                totalSeconds = Integer.parseInt(scanner.nextLine());
+            }catch (Exception e){
+                //assegno -1 per ripetere il ciclo
+                totalSeconds = -1;
+            }
+            if(totalSeconds < 0){
+                //se negativo mando output errore
+                System.out.println("Error, is not a positive integer number, please try again");
+            }
+        }while(totalSeconds < 0);
         //calcolo i minuti
-        minutes = totalSeconds / 60;
+        minutes = (double) totalSeconds / 60;
         seconds = totalSeconds % 60;
         //formatto i secondi
         String formatSeconds = String.format("%02d", (int)seconds);
