@@ -4,6 +4,8 @@ package org.learning.snack1;
 import java.util.Scanner;
 
 public class Snack1 {
+    //Chiedi all’utente di continuare ad inserire un numero pari compreso tra 10 e 20.
+    // Se il numero non corrisponde alla richiesta continuare a chiederlo fino a che non viene inserito un numero valido.
     public static void main(String[] args) {
         //definisco scanner
         Scanner scanner = new Scanner(System.in);
@@ -13,14 +15,14 @@ public class Snack1 {
         //dichiaro le variabili
         int inputNumber;
         do{
-            //ciclo finchè il numero inserito non è compreso tra MAX e MIN NUMBER
-            System.out.print("Please insert a number between " + MIN_NUMBER + " and " + MAX_NUMBER + ": ");
+            //ciclo finchè il numero inserito non è pari e compreso tra MAX e MIN NUMBER
+            System.out.print("Please insert a even number between " + MIN_NUMBER + " and " + MAX_NUMBER + ": ");
             inputNumber = scanner.nextInt();
-            if (inputNumber < MIN_NUMBER || inputNumber > MAX_NUMBER){
-                //se non è compreso stampo output dell'errore
-                System.out.println("number is not between " + MIN_NUMBER + " and " + MAX_NUMBER + ". Please try again ");
+            if (inputNumber < MIN_NUMBER || inputNumber > MAX_NUMBER || inputNumber % 2 == 1){
+                //se non è pari e compreso stampo output dell'errore
+                System.out.println("number is not even and between " + MIN_NUMBER + " and " + MAX_NUMBER + ". Please try again ");
             }
-        }while(inputNumber < MIN_NUMBER || inputNumber > MAX_NUMBER);
+        }while(inputNumber < MIN_NUMBER || inputNumber > MAX_NUMBER || inputNumber % 2 == 1);
         //output finale
         System.out.println("thank you");
     }
