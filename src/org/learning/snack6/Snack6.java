@@ -44,6 +44,7 @@ public class Snack6 {
         //formatto le ore
         String formatHours = String.format("%02d", (int)hours);
         if(hours>1){
+            //output finale
             System.out.println("times calculated: " + formatHours + "." + formatMinutes + "." + formatSeconds);
         }
     }

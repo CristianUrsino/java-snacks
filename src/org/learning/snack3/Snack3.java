@@ -1,6 +1,5 @@
 package org.learning.snack3;
 //imports
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class Snack3 {
@@ -18,6 +17,7 @@ public class Snack3 {
                 System.out.print("Please enter as how many numbers as you want: ");
                 sizeArrayNumbers = Integer.parseInt(scanner.nextLine());
             }catch(Exception e){
+                //assegno 1 per ripetere il ciclo
                 sizeArrayNumbers = 1;
             }
             if(sizeArrayNumbers < 2){

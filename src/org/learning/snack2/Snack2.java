@@ -1,6 +1,5 @@
 package org.learning.snack2;
 //imports
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class Snack2 {
@@ -35,7 +34,7 @@ public class Snack2 {
                 System.out.print("Please enter as many names as you want: ");
                 sizeFakeNames = Integer.parseInt(scanner.nextLine());
             }catch (Exception e){
-                //porta a 0 per ripetere il ciclo
+                //assegno a 0 per ripetere il ciclo
                 sizeFakeNames = 0;
             }
             if(sizeFakeNames <1){

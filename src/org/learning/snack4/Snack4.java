@@ -1,6 +1,5 @@
 package org.learning.snack4;
 //imports
-import java.util.Locale;
 import java.util.Scanner;
 public class Snack4 {
     //Data in input una stringa verificare se è palindroma
